@@ -166,7 +166,7 @@ const Quiz = () => {
   // 👇 SEND TO GOOGLE SHEETS HERE
   useEffect(() => {
     if (showResult) {
-      fetch('https://script.google.com/macros/s/AKfycbxKiM7PVxnPemaMNj1st5atjAbdt5qBSu41A1YsYNY-cAFIo-JcccfdmMz4YfKFikvHoQ/exec', {
+      fetch('https://script.google.com/macros/s/AKfycby2ZWxhZeRmVl7AL6C6-Pd5_1rWVKgpvK2xB4HNspt_l4trB5rDcYJfA5LEZxJKXsxfYg/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
