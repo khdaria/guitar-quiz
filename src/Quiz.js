@@ -184,10 +184,18 @@ const Quiz = () => {
   return (
     <div className="container">
       {current === -1 ? (
-        <div>
-          <h1>You wake up on stage... the lights are blinding... the crowd is roaring...</h1>
+        <div className="intro-screen">
+          <img
+            src="/img/s1.png"
+            alt="Stage lights and guitar"
+            className="intro-image"
+          />
+          <h1>
+            You wake up on stage... the lights are blinding... the crowd is
+            roaring...
+          </h1>
           <p>Let’s find out what kind of guitarist you really are.</p>
-          <button onClick={() => setCurrent(0)}>Begin your solo 🎸</button>
+          <button onClick={() => setCurrent(0)}>Begin your solo!</button>
         </div>
       ) : !showResult ? (
         <div>
@@ -196,7 +204,9 @@ const Quiz = () => {
             {questions[current].options.map((option, idx) => (
               <button
                 key={idx}
-                onClick={() => handleAnswer(option.value, questions[current].dimension)}
+                onClick={() =>
+                  handleAnswer(option.value, questions[current].dimension)
+                }
               >
                 {option.label}
               </button>
