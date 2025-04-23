@@ -163,6 +163,22 @@ const Quiz = () => {
   const mbtiResult = getMBTI();
   const resultData = typeDescriptions[mbtiResult];
 
+  // 👇 SEND TO GOOGLE SHEETS HERE
+  fetch('https://script.google.com/macros/s/AKfycbxKiM7PVxnPemaMNj1st5atjAbdt5qBSu41A1YsYNY-cAFIo-JcccfdmMz4YfKFikvHoQ/exec', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      ei: answers.ei,
+      sn: answers.sn,
+      tf: answers.tf,
+      jp: answers.jp,
+      resultTitle: resultData.title
+    })
+  });
+  
+
   return (
     <div className="container">
       {current === -1 ? (
