@@ -166,24 +166,20 @@ const Quiz = () => {
   // 👇 SEND TO GOOGLE SHEETS HERE
   useEffect(() => {
     if (showResult) {
-      fetch('https://script.google.com/macros/s/AKfycby2ZWxhZeRmVl7AL6C6-Pd5_1rWVKgpvK2xB4HNspt_l4trB5rDcYJfA5LEZxJKXsxfYg/exec', {
+      const formData = new FormData();
+      formData.append('entry.1087327079', answers.ei);             // E/I
+      formData.append('entry.1541220782', answers.sn);             // S/N
+      formData.append('entry.338454269', answers.tf);              // T/F
+      formData.append('entry.602697256', answers.jp);              // J/P
+      formData.append('entry.1452766634', resultData.title);       // Result Title
+  
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLScLXNno7YAPbBLBaV9NZSc-44hm1QAuSzwO9uQqYeBFPjqNLQ/formResponse', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          ei: answers.ei,
-          sn: answers.sn,
-          tf: answers.tf,
-          jp: answers.jp,
-          resultTitle: resultData.title
-        })
-      })
-      .then(res => res.json())
+        mode: 'no-cors',
+        body: formData,
+      });
     }
   }, [showResult]);
-  
-  
 
   return (
     <div className="container">
