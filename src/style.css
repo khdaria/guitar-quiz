@@ -14,7 +14,6 @@ body {
 
 .intro-screen img.intro-image {
   max-width: 100%;
-  border-radius: 16px;
   margin-bottom: 1.5rem;
 }
 
@@ -41,7 +40,7 @@ button,
   background-color: white;
   color: #333;
   border: 2px solid #00D397;
-  text-align: left;
+  text-align: center;
   display: block;
 }
 
@@ -52,6 +51,11 @@ button:hover {
   transform: translateY(-2px);
 }
 
+.question-screen p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
 
 
 .intro-screen h1,
@@ -65,10 +69,31 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 p {
   font-size: 1.1rem;
   line-height: 1.5;
+}
+
+.result-image {
+  max-width: 600px;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.progress-bar-wrapper {
+  width: 100%;
+  background-color: #eee;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #00D397;
+  transition: width 0.3s ease;
 }

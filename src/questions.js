@@ -5,7 +5,7 @@ export const questions = [
         { label: "I have a LOT of feelings and a desire to be on stage.", type: "The Artist" },
         { label: "I used to play back in the day — the Strat still calls to me.", type: "The I-Used-to-Play" },
         { label: "It seemed like a fun way to make friends (and look cool).", type: "The Poser" },
-        { label: "I clicked \"buy\" during a late-night identity crisis.", type: "The Hobby Hopper" }
+        { label: "I clicked “buy” during a late-night identity crisis.", type: "The Hobby Hopper" }
       ]
     },
     {
@@ -21,7 +21,7 @@ export const questions = [
       text: "How do you feel about music theory?",
       options: [
         { label: "YES. Inject fretboard diagrams directly into my brain.", type: "The Nerd" },
-        { label: "I appreciate it… but I’d rather write songs from the heart.", type: "The Artist" },
+        { label: "I’ve tried to learn it… more than once. I always lose steam.", type: "The Eternal Restarter" },
         { label: "If it helps me unlock more badges, I’m in.", type: "The Teacher’s Pet" },
         { label: "Ew. I just want to strum and look vibey.", type: "The Poser" }
       ]
@@ -32,7 +32,7 @@ export const questions = [
         { label: "I panic and change the subject to string gauges.", type: "The Nerd" },
         { label: "I bust out Wonderwall like it’s 2002.", type: "The Poser" },
         { label: "I lowkey hope they’ll ask — I’ve been working on a setlist.", type: "The Artist" },
-        { label: "Uhhh… I used to know a few things…", type: "The I-Used-to-Play" }
+        { label: "‘Uhhh… I used to know a few things…’", type: "The I-Used-to-Play" }
       ]
     },
     {
@@ -50,23 +50,23 @@ export const questions = [
         { label: "Inconsistent. Emotional. A little chaotic.", type: "The Eternal Restarter" },
         { label: "Organized and gamified. I’m chasing progress.", type: "The Teacher’s Pet" },
         { label: "Mostly imaginary. I’ll get to it one day.", type: "The Someday Player" },
-        { label: "I jump around based on whatever looks fun this week.", type: "The Hobby Hopper" }
+        { label: "Super into it this week. Next week? Who knows.", type: "The Hobby Hopper" }
       ]
     },
     {
       text: "How do you usually feel after a practice session?",
       options: [
         { label: "Energized — I just unlocked another achievement!", type: "The Teacher’s Pet" },
-        { label: "Reflective — I probably wrote half a song.", type: "The Artist" },
-        { label: "That was fun… maybe I’ll stick with it this time.", type: "The Eternal Restarter" },
-        { label: "Huh. Well, that was a cool little detour from life.", type: "The Hobby Hopper" }
+        { label: "Satisfied. My downstrokes were 4 BPM tighter than yesterday.", type: "The Nerd" },
+        { label: "‘That was fun… maybe I’ll stick with it this time.’", type: "The Eternal Restarter" },
+        { label: "‘Huh. Well, that was a cool little detour from life.’", type: "The Hobby Hopper" }
       ]
     },
     {
       text: "What’s your idea of ‘success’ with guitar?",
       options: [
         { label: "Getting tight enough to jam with friends at a party.", type: "The Poser" },
-        { label: "Playing on a stage, preferably under dramatic lighting.", type: "The Artist" },
+        { label: "Playing without muttering ‘I used to be better at this.’", type: "The I-Used-to-Play" },
         { label: "Actually remembering to practice twice in one week.", type: "The Someday Player" },
         { label: "Achieving a 30-day streak and framing the certificate.", type: "The Teacher’s Pet" }
       ]
@@ -74,10 +74,10 @@ export const questions = [
     {
       text: "You’ve been invited to a jam session. What’s your response?",
       options: [
-        { label: "Yes, and here’s my original song about heartbreak.", type: "The Artist" },
-        { label: "Do I get XP for this?", type: "The Teacher’s Pet" },
-        { label: "I’m too rusty… maybe next time.", type: "The I-Used-to-Play" },
-        { label: "Sure, I’ll bring snacks and vibes. What key are we in?", type: "The Hobby Hopper" }
+        { label: "‘Yes, and here’s my original song about heartbreak.’", type: "The Artist" },
+        { label: "‘Only if air guitar counts.’", type: "The Someday Player" },
+        { label: "‘I’m too rusty… maybe next time.’", type: "The I-Used-to-Play" },
+        { label: "‘Sure, I’ll bring snacks and vibes. What key are we in?’", type: "The Hobby Hopper" }
       ]
     },
     {
@@ -92,25 +92,16 @@ export const questions = [
     {
       text: "How do you pick what to play next?",
       options: [
-        { label: "Based on how emotional the lyrics are.", type: "The Artist" },
-        { label: "Based on how shiny the thumbnail is.", type: "The Poser" },
+        { label: "I consult with my muse over breakfast coffee.", type: "The Artist" },
+        { label: "Based on whatever the people in the room like.", type: "The Poser" },
         { label: "Based on where I left off in my perfectly optimized path.", type: "The Teacher’s Pet" },
-        { label: "Based on what I half-remember from a year ago.", type: "The I-Used-to-Play" }
-      ]
-    },
-    {
-      text: "What's your vibe with challenges or competitions?",
-      options: [
-        { label: "Bring it on. I thrive on streaks and stars.", type: "The Teacher’s Pet" },
-        { label: "I’m here for fun, not to stress over notes.", type: "The Poser" },
-        { label: "I’ll do it if it fits in my schedule. (Spoiler: it won’t.)", type: "The Someday Player" },
-        { label: "I’ll try it, forget about it, and rediscover it in 3 months.", type: "The Eternal Restarter" }
+        { label: "Based on what I half-remember from a years ago.", type: "The I-Used-to-Play" }
       ]
     },
     {
       text: "What’s your biggest flex as a guitarist?",
       options: [
-        { label: "I once had a solo that made my friend cry.", type: "The Artist" },
+        { label: "I turned a voice memo into a love song.", type: "The Artist" },
         { label: "I played for years. There are photos. Somewhere.", type: "The I-Used-to-Play" },
         { label: "I can name 8 different kinds of delay pedals.", type: "The Nerd" },
         { label: "I learned 3 chords during a weekend retreat.", type: "The Hobby Hopper" }
@@ -120,18 +111,18 @@ export const questions = [
       text: "How do you feel about performing live?",
       options: [
         { label: "It’s my dream. Put me on that stage.", type: "The Artist" },
-        { label: "I’d rather film something cool and post it later.", type: "The Poser" },
+        { label: "How’s my hair?", type: "The Poser" },
         { label: "It sounds nice, but I need to, like… practice first. A lot.", type: "The I-Used-to-Play" },
         { label: "Only if someone is clapping after each chord I play.", type: "The Eternal Restarter" }
       ]
     },
     {
-      text: "You get a notification: ‘New Song Challenge Just Dropped!’ What do you do?",
+      text: "You are learning with an app. You get a notification that there is a new song to try. What do you do?",
       options: [
-        { label: "Drop everything and go earn those points.", type: "The Teacher’s Pet" },
-        { label: "Watch the video, get inspired, then go make dinner.", type: "The Someday Player" },
+        { label: "Play obsessively until I have it down perfectly.", type: "The Teacher’s Pet" },
+        { label: "Cool story but I have to make my kids dinner.", type: "The Someday Player" },
         { label: "Click it, get overwhelmed, disappear for a month.", type: "The Eternal Restarter" },
-        { label: "Try it out, then go learn fingerstyle flamenco for no reason.", type: "The Hobby Hopper" }
+        { label: "Song? Nah, it’s yoga time.", type: "The Hobby Hopper" }
       ]
     }
   ];

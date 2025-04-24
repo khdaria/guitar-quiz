@@ -1,38 +1,65 @@
 import React, { useState } from 'react';
 import { questions } from './questions';
 
+const typeImages = {
+  "The Artist": "/img/artist.png",
+  "The Poser": "/img/poser.png",
+  "The Eternal Restarter": "/img/restarter.png",
+  "The Nerd": "/img/nerd.png",
+  "The I-Used-to-Play": "/img/usedtoplay.png",
+  "The Someday Player": "/img/someday.png",
+  "The Teacher’s Pet": "/img/teacher.png",
+  "The Hobby Hopper": "/img/hopper.png"
+};
+
 const typeDescriptions = {
   "The Artist": {
-    title: "🎨 The Artist",
-    description: "You’re not here to just play songs — you want to create. Whether it’s writing your own music or dreaming of being on stage, guitar is your way of saying something the world needs to hear. You’re driven by emotion and expression more than perfection. Technical drills might not excite you, but creating something original? That’s your fuel.\n\n🎯 Try exploring songwriting tools, open tunings, and emotion-driven practice — like improvising over mellow backing tracks."
+    short: "Emotional stage dreamer",
+    title: "The Artist",
+    description1: "You’re not here to just play songs — you want to create. Whether it’s writing your own music or dreaming of being on stage, guitar is your way of saying something the world needs to hear. You’re driven by emotion and expression more than perfection.",
+    description2: "Try exploring songwriting tools, open tunings, and emotion-driven practice — like improvising over mellow backing tracks."
   },
   "The Poser": {
-    title: "😎 The Poser",
-    description: "You picked up the guitar because it’s cool — and honestly, you’re not wrong. You want to learn fast, sound good enough to impress, and maybe drop a riff or two when the moment calls for it. You’re not looking to master theory; you want fun, fast wins, and a bit of flair. That’s totally legit.\n\n🎯 Focus on iconic intros, party riffs, and easy but flashy songs that make you look (and feel) like a star."
+    short: "Stylish riff dropper",
+    title: "The Poser",
+    description1: "You picked up the guitar because it’s cool — and honestly, you’re not wrong. You want to learn fast, sound good enough to impress, and maybe drop a riff or two when the moment calls for it.",
+    description2: "Focus on iconic intros, party riffs, and easy but flashy songs that make you look (and feel) like a star."
   },
   "The Eternal Restarter": {
-    title: "🔁 The Eternal Restarter",
-    description: "Hey — no shame. You’ve started learning more times than you can count, and every time you pick it back up, it’s because you still care. You want to play, but routines don’t stick, and it’s easy to feel like you’re starting from scratch again and again. That’s totally normal.\n\n🎯 Start with short, guided sessions and mix in something fun every few days to avoid burnout. Don’t aim for perfect — just keep moving."
+    short: "Hopeful chaos repeater",
+    title: "The Eternal Restarter",
+    description1: "Hey — no shame. You’ve started learning more times than you can count, and every time you pick it back up, it’s because you still care.",
+    description2: "Start with short, guided sessions and mix in something fun every few days to avoid burnout. Don’t aim for perfect — just keep moving."
   },
   "The Nerd": {
-    title: "🧠 The Nerd",
-    description: "You don’t just want to play guitar — you want to know everything about it. You dive deep into tone, gear, scales, and structure, and your brain lights up when things click. Theory excites you more than just memorizing chords. But sometimes you overthink it and forget to just play.\n\n🎯 Alternate focused practice with free exploration. Try theory-based challenges, scale workouts, and messing with gear or tone experiments."
+    short: "Theory-loving tinkerer",
+    title: "The Nerd",
+    description1: "You don’t just want to play guitar — you want to know everything about it. You dive deep into tone, gear, scales, and structure, and your brain lights up when things click.",
+    description2: "🎯 Alternate focused practice with free exploration. Try theory-based challenges, scale workouts, and gear experiments."
   },
   "The I-Used-to-Play": {
-    title: "🎸 The I-Used-to-Play",
-    description: "You’ve been there. You used to play, maybe even jam or perform — but life moved on, and your guitar got a little dusty. The desire to play never fully left though, did it? That spark is still there, waiting.\n\n🎯 Ease back in with warm-ups, familiar songs, or genre packs that bring back that old joy. Skip the beginner stuff — go where it feels good."
+    short: "Rusty but nostalgic",
+    title: "The I-Used-to-Play",
+    description1: "You’ve been there. You used to play, maybe even jam or perform — but life moved on, and your guitar got a little dusty.",
+    description2: "Ease back in with warm-ups, familiar songs, or genre packs that bring back that old joy."
   },
   "The Someday Player": {
-    title: "⏰ The Someday Player",
-    description: "You want to play — you really do. But between work, errands, and everything else, guitar ends up last on the list. Still, every time you touch it, it’s like a breath of fresh air. You’re not lacking motivation — you’re just lacking time.\n\n🎯 Stick to 5–10 minute sessions. Try “riff of the day” or short, rewarding exercises that don’t need a warm-up or mental prep."
+    short: "Busy with good intentions",
+    title: "The Someday Player",
+    description1: "You want to play — you really do. But between work, errands, and everything else, guitar ends up last on the list.",
+    description2: "Stick to 5–10 minute sessions. Try “riff of the day” or short, rewarding exercises that don’t need warm-up."
   },
   "The Teacher’s Pet": {
-    title: "🏅 The Teacher’s Pet",
-    description: "You love ticking boxes, smashing goals, and watching your progress add up. You’re the kind of learner who wants a clear path, feedback, and reasons to say “nailed it.” You thrive on structure — and maybe just a little competition.\n\n🎯 Focus on goal-based lesson paths, streak challenges, and skill-tracking tools. Bonus points if there’s a badge at the end."
+    short: "Badge-seeking overachiever",
+    title: "The Teacher’s Pet",
+    description1: "You love ticking boxes, smashing goals, and watching your progress add up. You want a clear path and feedback.",
+    description2: "Focus on lesson paths, streak challenges, and skill-tracking tools. Bonus if there’s a badge at the end."
   },
   "The Hobby Hopper": {
-    title: "🎯 The Hobby Hopper",
-    description: "Guitar is fun! So was painting, yoga, and maybe roller skating. You love diving into new interests — and sometimes you bounce out just as fast. No worries. As long as guitar stays exciting, you’ll keep coming back.\n\n🎯 Skip the grind — go for fun riffs, quick wins, and try different genres often. Keep it fresh, light, and low-pressure."
+    short: "Genre-skipping enthusiast",
+    title: "The Hobby Hopper",
+    description1: "Guitar is fun! So was painting, yoga, and maybe roller skating. You love diving into new interests.",
+    description2: "Go for fun riffs, quick wins, and try different genres often. Keep it fresh and light."
   }
 };
 
@@ -71,11 +98,20 @@ const Quiz = () => {
         <div className="intro-screen">
           <img src="/img/guitar-stage.png" alt="Stage" className="intro-image" />
           <h1>Discover Your Guitar Persona</h1>
-          <p>We all have a guitarist inside us. Some just haven’t plugged in yet.<br/>Pick what feels most <em>you</em> — no playing experience needed.</p>
+          <p>
+            We all have a guitarist inside us. Some just haven’t plugged in yet.<br />
+            Pick what feels most <em>you</em> — no playing experience needed.
+          </p>
           <button onClick={() => setCurrent(0)}>Reveal my type ✨</button>
         </div>
       ) : !showResult ? (
         <div className="question-screen">
+          <div className="progress-bar-wrapper">
+            <div
+              className="progress-bar"
+              style={{ width: `${Math.round(((current + 1) / questions.length) * 100)}%` }}
+            ></div>
+          </div>
           <p>{questions[current].text}</p>
           <div className="options">
             {questions[current].options.map((option, idx) => (
@@ -93,20 +129,23 @@ const Quiz = () => {
       ) : resultData ? (
         <div className="result-screen">
           <h2>Your Guitar Player Type</h2>
-          <h3>{resultData.title}</h3>
-          <p>{resultData.description}</p>
-
-          <h4>🧠 Your full guitar type breakdown:</h4>
+          <img src={typeImages[topType]}  alt={topType} className="result-image"/>
+          <h2>{resultData.title}</h2>
+          <div className="result-description">
+            <p>{resultData.description1}</p>
+            <p>{resultData.description2}</p>
+          </div>
+          <h4>Your full guitar type breakdown:</h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             {[...Object.entries(scores)]
-              .filter(([_, count]) => count > 0)
+              .filter(([type, count]) => count > 0 && type !== topType)
               .map(([type, count]) => {
                 const percentage = Math.round((count / totalAnswers) * 100);
                 return { type, percentage };
               })
               .sort((a, b) => b.percentage - a.percentage)
               .map(({ type, percentage }) => (
-                <li key={type}><strong>{type}</strong>: {percentage}%</li>
+                <li key={type}><strong>{type}</strong> — {typeDescriptions[type].short}: {percentage}%</li>
               ))}
           </ul>
         </div>
