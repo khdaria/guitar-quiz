@@ -1,148 +1,51 @@
-import React, { useState, useEffect } from 'react';
-
-const questions = [
-  {
-    text: "You're suddenly on stage — the crowd cheers. What do you do?",
-    dimension: "ei",
-    options: [
-      { label: "Strike a pose and yell \"LET'S GO!\"", value: "E" },
-      { label: "Quietly wonder if you’re dreaming...", value: "I" }
-    ]
-  },
-  {
-    text: "You’re offered the spotlight solo. You...",
-    dimension: "ei",
-    options: [
-      { label: "Shred like it’s your destiny.", value: "E" },
-      { label: "Point to the bassist and step back.", value: "I" }
-    ]
-  },
-  {
-    text: "The amp breaks. You...",
-    dimension: "sn",
-    options: [
-      { label: "Check cables, toggle switches, troubleshoot.", value: "S" },
-      { label: "Tap it, whisper 'revive thy tone spirit'.", value: "N" }
-    ]
-  },
-  {
-    text: "You hear a weird noise from your guitar. You...",
-    dimension: "sn",
-    options: [
-      { label: "Identify the exact string and frequency.", value: "S" },
-      { label: "Decide it’s an alien message and jam along.", value: "N" }
-    ]
-  },
-  {
-    text: "A bandmate forgets the chord progression. You...",
-    dimension: "tf",
-    options: [
-      { label: "Stop the song and explain the chord logic.", value: "T" },
-      { label: "Smile and improvise with them.", value: "F" }
-    ]
-  },
-  {
-    text: "Someone says your tone is 'weird'. You...",
-    dimension: "tf",
-    options: [
-      { label: "Ask for a specific decibel range.", value: "T" },
-      { label: "Cry a little, then thank them.", value: "F" }
-    ]
-  },
-  {
-    text: "The set starts in 10 minutes. You...",
-    dimension: "jp",
-    options: [
-      { label: "Have a color-coded checklist ready.", value: "J" },
-      { label: "Tune one string and wing the rest.", value: "P" }
-    ]
-  },
-  {
-    text: "Your cable is tangled. You...",
-    dimension: "jp",
-    options: [
-      { label: "Wrap it properly, like a responsible adult.", value: "J" },
-      { label: "Throw it in your case and pretend it’s fine.", value: "P" }
-    ]
-  }
-];
+import React, { useState } from 'react';
+import { questions } from './questions';
 
 const typeDescriptions = {
-  INFJ: {
-    title: "🌌 The Dreamy Songwriter",
-    description: "Lives in a fog of reverb and feelings. Wears fingerless gloves for ~vibe~. Might be writing a concept album about trees."
+  "The Artist": {
+    title: "🎨 The Artist",
+    description: "You’re not here to just play songs — you want to create. Whether it’s writing your own music or dreaming of being on stage, guitar is your way of saying something the world needs to hear. You’re driven by emotion and expression more than perfection. Technical drills might not excite you, but creating something original? That’s your fuel.\n\n🎯 Try exploring songwriting tools, open tunings, and emotion-driven practice — like improvising over mellow backing tracks."
   },
-  INTJ: {
-    title: "🧠 The Mastermind Shredder",
-    description: "Built a solo using Fibonacci numbers. Wears shades indoors. Already wrote your part, too."
+  "The Poser": {
+    title: "😎 The Poser",
+    description: "You picked up the guitar because it’s cool — and honestly, you’re not wrong. You want to learn fast, sound good enough to impress, and maybe drop a riff or two when the moment calls for it. You’re not looking to master theory; you want fun, fast wins, and a bit of flair. That’s totally legit.\n\n🎯 Focus on iconic intros, party riffs, and easy but flashy songs that make you look (and feel) like a star."
   },
-  ISTJ: {
-    title: "🎚️ The Gear Head",
-    description: "Obsessed with perfect pedalboard symmetry. Labels their picks by day of the week. Probably owns more tuners than friends."
+  "The Eternal Restarter": {
+    title: "🔁 The Eternal Restarter",
+    description: "Hey — no shame. You’ve started learning more times than you can count, and every time you pick it back up, it’s because you still care. You want to play, but routines don’t stick, and it’s easy to feel like you’re starting from scratch again and again. That’s totally normal.\n\n🎯 Start with short, guided sessions and mix in something fun every few days to avoid burnout. Don’t aim for perfect — just keep moving."
   },
-  ISFJ: {
-    title: "🤝 The Rhythm Rock",
-    description: "Keeps time, peace, and snacks in check. Brings extra strings for the forgetful lead guitarist."
+  "The Nerd": {
+    title: "🧠 The Nerd",
+    description: "You don’t just want to play guitar — you want to know everything about it. You dive deep into tone, gear, scales, and structure, and your brain lights up when things click. Theory excites you more than just memorizing chords. But sometimes you overthink it and forget to just play.\n\n🎯 Alternate focused practice with free exploration. Try theory-based challenges, scale workouts, and messing with gear or tone experiments."
   },
-  ISTP: {
-    title: "🛠️ The Modder",
-    description: "Turns a spoon into a slide mid-solo. Modded their amp to make toast."
+  "The I-Used-to-Play": {
+    title: "🎸 The I-Used-to-Play",
+    description: "You’ve been there. You used to play, maybe even jam or perform — but life moved on, and your guitar got a little dusty. The desire to play never fully left though, did it? That spark is still there, waiting.\n\n🎯 Ease back in with warm-ups, familiar songs, or genre packs that bring back that old joy. Skip the beginner stuff — go where it feels good."
   },
-  ISFP: {
-    title: "🎨 The Vibe Maestro",
-    description: "Tunes by moonlight. Paints their guitars. Might cry if a string breaks... or if it doesn’t."
+  "The Someday Player": {
+    title: "⏰ The Someday Player",
+    description: "You want to play — you really do. But between work, errands, and everything else, guitar ends up last on the list. Still, every time you touch it, it’s like a breath of fresh air. You’re not lacking motivation — you’re just lacking time.\n\n🎯 Stick to 5–10 minute sessions. Try “riff of the day” or short, rewarding exercises that don’t need a warm-up or mental prep."
   },
-  INFP: {
-    title: "🌙 The Bedroom Poet",
-    description: "Has 148 half-written love songs. Shares none of them. Legends say they once hit a high E and ascended."
+  "The Teacher’s Pet": {
+    title: "🏅 The Teacher’s Pet",
+    description: "You love ticking boxes, smashing goals, and watching your progress add up. You’re the kind of learner who wants a clear path, feedback, and reasons to say “nailed it.” You thrive on structure — and maybe just a little competition.\n\n🎯 Focus on goal-based lesson paths, streak challenges, and skill-tracking tools. Bonus points if there’s a badge at the end."
   },
-  INTP: {
-    title: "🔬 The Tuning Hacker",
-    description: "Uses math to justify chaos. Probably invented a new genre last Tuesday."
-  },
-  ESTP: {
-    title: "🔥 The Stage Jumper",
-    description: "Stage dives during acoustic sets. Broke 3 strings and the fourth wall."
-  },
-  ESFP: {
-    title: "🎉 The Party Strummer",
-    description: "Has glitter in their gig bag. Chords optional. Charisma maxed."
-  },
-  ENFP: {
-    title: "🌈 The Genre Bender",
-    description: "Today it’s country jazzcore. Tomorrow? Who knows. Definitely owns a kazoo."
-  },
-  ENTP: {
-    title: "🎛️ The Sonic Explorer",
-    description: "Every knob is turned to 11. Sounds like a spaceship. That’s the point."
-  },
-  ESTJ: {
-    title: "📋 The Band Manager",
-    description: "Micromanages tempo and snacks. Setlist printed in triplicate."
-  },
-  ESFJ: {
-    title: "🎤 The Crowd Charmer",
-    description: "Knows your name, your grandma’s name, and still hits the harmony like butter."
-  },
-  ENFJ: {
-    title: "🪄 The Jam Leader",
-    description: "Wrote everyone’s solos... just in case. Inspires tears and encores."
-  },
-  ENTJ: {
-    title: "👑 The Guitar CEO",
-    description: "Started a record label in their garage. Signed themselves and went platinum."
+  "The Hobby Hopper": {
+    title: "🎯 The Hobby Hopper",
+    description: "Guitar is fun! So was painting, yoga, and maybe roller skating. You love diving into new interests — and sometimes you bounce out just as fast. No worries. As long as guitar stays exciting, you’ll keep coming back.\n\n🎯 Skip the grind — go for fun riffs, quick wins, and try different genres often. Keep it fresh, light, and low-pressure."
   }
 };
 
 const Quiz = () => {
   const [current, setCurrent] = useState(-1);
-  const [answers, setAnswers] = useState({ ei: '', sn: '', tf: '', jp: '' });
+  const [scores, setScores] = useState({});
   const [showResult, setShowResult] = useState(false);
 
-  const handleAnswer = (value, dimension) => {
-    const updatedAnswers = { ...answers };
-    updatedAnswers[dimension] += value;
-    setAnswers(updatedAnswers);
+  const handleAnswer = (type) => {
+    setScores((prev) => ({
+      ...prev,
+      [type]: (prev[type] || 0) + 1
+    }));
 
     if (current + 1 < questions.length) {
       setCurrent(current + 1);
@@ -151,75 +54,63 @@ const Quiz = () => {
     }
   };
 
-  const getMBTI = () => {
-    return (
-      (answers.ei.split('E').length >= answers.ei.split('I').length ? 'E' : 'I') +
-      (answers.sn.split('S').length >= answers.sn.split('N').length ? 'S' : 'N') +
-      (answers.tf.split('T').length >= answers.tf.split('F').length ? 'T' : 'F') +
-      (answers.jp.split('J').length >= answers.jp.split('P').length ? 'J' : 'P')
-    );
+  const getTopType = () => {
+    const entries = Object.entries(scores);
+    if (entries.length === 0) return null;
+    const sorted = entries.sort((a, b) => b[1] - a[1]);
+    return sorted[0][0];
   };
 
-  const mbtiResult = getMBTI();
-  const resultData = typeDescriptions[mbtiResult];
-
-  // 👇 SEND TO GOOGLE SHEETS HERE
-  useEffect(() => {
-    if (showResult) {
-      const formData = new FormData();
-      formData.append('entry.1087327079', answers.ei);             // E/I
-      formData.append('entry.1541220782', answers.sn);             // S/N
-      formData.append('entry.338454269', answers.tf);              // T/F
-      formData.append('entry.602697256', answers.jp);              // J/P
-      formData.append('entry.1452766634', resultData.title);       // Result Title
-  
-      fetch('https://docs.google.com/forms/d/e/1FAIpQLScLXNno7YAPbBLBaV9NZSc-44hm1QAuSzwO9uQqYeBFPjqNLQ/formResponse', {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData,
-      });
-    }
-  }, [showResult]);
+  const topType = getTopType();
+  const resultData = topType ? typeDescriptions[topType] : null;
+  const totalAnswers = Object.values(scores).reduce((sum, val) => sum + val, 0);
 
   return (
-    <div className="container">
+    <div className="quiz-container">
       {current === -1 ? (
         <div className="intro-screen">
-          <img
-            src="/img/s1.png"
-            alt="Stage lights and guitar"
-            className="intro-image"
-          />
-          <h1>
-            You wake up on stage... the lights are blinding... the crowd is
-            roaring...
-          </h1>
-          <p>Let’s find out what kind of guitarist you really are.</p>
-          <button onClick={() => setCurrent(0)}>Begin your solo!</button>
+          <img src="/img/guitar-stage.png" alt="Stage" className="intro-image" />
+          <h1>Discover Your Guitar Persona</h1>
+          <p>We all have a guitarist inside us. Some just haven’t plugged in yet.<br/>Pick what feels most <em>you</em> — no playing experience needed.</p>
+          <button onClick={() => setCurrent(0)}>Reveal my type ✨</button>
         </div>
       ) : !showResult ? (
-        <div>
+        <div className="question-screen">
           <p>{questions[current].text}</p>
-          <div>
+          <div className="options">
             {questions[current].options.map((option, idx) => (
-              <button
-                key={idx}
-                onClick={() =>
-                  handleAnswer(option.value, questions[current].dimension)
-                }
-              >
-                {option.label}
-              </button>
+              <div key={idx} className="option-wrapper">
+                <button
+                  className="answer-button"
+                  onClick={() => handleAnswer(option.type)}
+                >
+                  {option.label}
+                </button>
+              </div>
             ))}
           </div>
         </div>
-      ) : (
-        <div>
-          <h2>You blink and find yourself back in your room...</h2>
+      ) : resultData ? (
+        <div className="result-screen">
+          <h2>Your Guitar Player Type</h2>
           <h3>{resultData.title}</h3>
           <p>{resultData.description}</p>
+
+          <h4>🧠 Your full guitar type breakdown:</h4>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            {[...Object.entries(scores)]
+              .filter(([_, count]) => count > 0)
+              .map(([type, count]) => {
+                const percentage = Math.round((count / totalAnswers) * 100);
+                return { type, percentage };
+              })
+              .sort((a, b) => b.percentage - a.percentage)
+              .map(({ type, percentage }) => (
+                <li key={type}><strong>{type}</strong>: {percentage}%</li>
+              ))}
+          </ul>
         </div>
-      )}
+      ) : null}
     </div>
   );
 };
