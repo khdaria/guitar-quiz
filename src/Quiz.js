@@ -12,54 +12,65 @@ const typeImages = {
   "The Hobby Hopper": "/img/hopper.png"
 };
 
+const typeProducts = {
+  "The Artist": "/img/GT.png",
+  "The Poser": "/img/YS.png",
+  "The Eternal Restarter": "/img/YS.png",
+  "The Nerd": "/img/GT.png",
+  "The I-Used-to-Play": "/img/YS.png",
+  "The Someday Player": "/img/YS.png",
+  "The Practice Machine": "/img/YS.png",
+  "The Hobby Hopper": "/img/YS.png"
+};
+
 const typeDescriptions = {
   "The Artist": {
     short: "Emotional stage dreamer",
     title: "The Artist",
     description1: "You’re not here to just play songs — you want to create. Whether it’s writing your own music or dreaming of being on stage, guitar is your way of saying something the world needs to hear. You’re driven by emotion and expression more than perfection.",
-    description2: "Try exploring songwriting tools, open tunings, and emotion-driven practice — like improvising over mellow backing tracks."
+    description2: "Look up the chords to your favorite songs on GuitarTuna, play them and feel free to improvise. Jamming over Beat Tracks in Yousician might also lead you to some cool improvised licks."
   },
   "The Poser": {
     short: "Stylish riff dropper",
     title: "The Poser",
     description1: "You picked up the guitar because it’s cool — and honestly, you’re not wrong. You want to learn fast, sound good enough to impress, and maybe drop a riff or two when the moment calls for it.",
-    description2: "Focus on iconic intros, party riffs, and easy but flashy songs that make you look (and feel) like a star."
+    description2: "Yousician has got you covered with Iconic Riffs and Killer Intros collections. Learn how to play instantly recognisable riffs and song intros that will make you a sensation in every party!"
   },
   "The Eternal Restarter": {
     short: "Hopeful chaos repeater",
     title: "The Eternal Restarter",
     description1: "Hey — no shame. You’ve started learning more times than you can count, and every time you pick it back up, it’s because you still care.",
-    description2: "Start with short, guided sessions and mix in something fun every few days to avoid burnout. Don’t aim for perfect — just keep moving."
+    description2: "Yousician's Daily Session was tailor made for you. Stay focused and build a habit by playing a short, meaningful lesson every day."
   },
   "The Nerd": {
     short: "Theory-loving tinkerer",
     title: "The Nerd",
     description1: "You don’t just want to play guitar — you want to know everything about it. You dive deep into tone, gear, scales, and structure, and your brain lights up when things click.",
-    description2: "🎯 Alternate focused practice with free exploration. Try theory-based challenges, scale workouts, and gear experiments."
+    description2: "GuitarTuna's Tools were made for you! From Ear Training, an extensive Chord Library all the way to our innovative Jams feature, GuitarTuna's tools help you master the guitar!"
   },
   "The I-Used-to-Play": {
     short: "Rusty but nostalgic",
     title: "The I-Used-to-Play",
     description1: "You’ve been there. You used to play, maybe even jam or perform — but life moved on, and your guitar got a little dusty.",
-    description2: "Ease back in with warm-ups, familiar songs, or genre packs that bring back that old joy."
+    description2: "Yousician's main guitar course was designed to ease you right back into your favorite hobby. Offering simple, manageable lessons that you can do in under 5 minutes, it's a sure-fire way to reignite your passion."
   },
   "The Someday Player": {
     short: "Busy with good intentions",
     title: "The Someday Player",
     description1: "You want to play — you really do. But between work, errands, and everything else, guitar ends up last on the list.",
-    description2: "Stick to 5–10 minute sessions. Try “riff of the day” or short, rewarding exercises that don’t need warm-up."
+    description2: "Riff of the Day in Yousician and GuitarTuna was made for you. You only need to put in 30 seconds every day but don't be surprised if you find yourself coming back time and time again in order to achieve full mastery!"
   },
   "The Practice Machine": {
     short: "Badge-seeking overachiever",
     title: "The Practice Machine",
     description1: "You love ticking boxes, smashing goals, and watching your progress add up. You want a clear path and feedback.",
-    description2: "Focus on lesson paths, streak challenges, and skill-tracking tools. Bonus if there’s a badge at the end."
+    description2: "Yousician's step-by-step learning Path was made just for you. We also hid a wealth of exercises under our Workouts section, so feel free to check those out as soon as you've become familiar with the fretboard!"
   },
   "The Hobby Hopper": {
     short: "Genre-skipping enthusiast",
     title: "The Hobby Hopper",
     description1: "Guitar is fun! So was painting, yoga, and maybe roller skating. You love diving into new interests.",
-    description2: "Go for fun riffs, quick wins, and try different genres often. Keep it fresh and light."
+    description2: "Check out Yousician's Home Screen for a little taste of everything. Riff of the Day, Collections of your Favorite Artist or your Daily Session. We've got something tailored for every mood and time constraint.  Dive in today!"
   }
 };
 
@@ -135,6 +146,7 @@ const Quiz = () => {
             <p>{resultData.description1}</p>
             <p>{resultData.description2}</p>
           </div>
+          <img src={typeProducts[topType]}  alt={topType} className="product-image"/>
           <h4>Your full guitar type breakdown:</h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             {[...Object.entries(scores)]
