@@ -32,7 +32,7 @@ export const questions = [
         { label: "I panic and change the subject to string gauges.", type: "The Nerd" },
         { label: "I bust out Wonderwall like it’s 2002.", type: "The Poser" },
         { label: "I lowkey hope they’ll ask — I’ve been working on a setlist.", type: "The Artist" },
-        { label: "‘Uhhh… I used to know a few things…’", type: "The I-Used-to-Play" }
+        { label: "Uhhh… I used to know a few things…", type: "The I-Used-to-Play" }
       ]
     },
     {
@@ -74,10 +74,10 @@ export const questions = [
     {
       text: "You’ve been invited to a jam session. What’s your response?",
       options: [
-        { label: "‘Yes, and here’s my original song about heartbreak.’", type: "The Artist" },
-        { label: "‘Only if air guitar counts.’", type: "The Someday Player" },
-        { label: "‘I’m too rusty… maybe next time.’", type: "The I-Used-to-Play" },
-        { label: "‘Sure, I’ll bring snacks and vibes. What key are we in?’", type: "The Hobby Hopper" }
+        { label: "Yes, and here’s my original song about heartbreak.", type: "The Artist" },
+        { label: "Only if air guitar counts.", type: "The Someday Player" },
+        { label: "I’m too rusty… maybe next time.", type: "The I-Used-to-Play" },
+        { label: "Sure, I’ll bring snacks and vibes. What key are we in?", type: "The Hobby Hopper" }
       ]
     },
     {
@@ -95,7 +95,7 @@ export const questions = [
         { label: "I consult with my muse over breakfast coffee.", type: "The Artist" },
         { label: "Based on whatever the people in the room like.", type: "The Poser" },
         { label: "Based on where I left off in my perfectly optimized path.", type: "The Practice Machine" },
-        { label: "Based on what I half-remember from a years ago.", type: "The I-Used-to-Play" }
+        { label: "Based on what I half-remember from years ago.", type: "The I-Used-to-Play" }
       ]
     },
     {
