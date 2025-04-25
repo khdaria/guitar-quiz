@@ -13,7 +13,7 @@ export const questions = [
       options: [
         { label: "I practice when I can squeeze it between 37 other obligations.", type: "The Someday Player" },
         { label: "I’ve restarted my beginner course more times than I can count.", type: "The Eternal Restarter" },
-        { label: "I follow a plan. There are spreadsheets. There are goals.", type: "The Teacher’s Pet" },
+        { label: "I follow a plan. There are spreadsheets. There are goals.", type: "The Practice Machine" },
         { label: "I just mess around with gear until something sounds cool.", type: "The Nerd" }
       ]
     },
@@ -22,7 +22,7 @@ export const questions = [
       options: [
         { label: "YES. Inject fretboard diagrams directly into my brain.", type: "The Nerd" },
         { label: "I’ve tried to learn it… more than once. I always lose steam.", type: "The Eternal Restarter" },
-        { label: "If it helps me unlock more badges, I’m in.", type: "The Teacher’s Pet" },
+        { label: "If it helps me unlock more badges, I’m in.", type: "The Practice Machine" },
         { label: "Ew. I just want to strum and look vibey.", type: "The Poser" }
       ]
     },
@@ -48,7 +48,7 @@ export const questions = [
       text: "Which of these best describes your learning journey?",
       options: [
         { label: "Inconsistent. Emotional. A little chaotic.", type: "The Eternal Restarter" },
-        { label: "Organized and gamified. I’m chasing progress.", type: "The Teacher’s Pet" },
+        { label: "Organized and gamified. I’m chasing progress.", type: "The Practice Machine" },
         { label: "Mostly imaginary. I’ll get to it one day.", type: "The Someday Player" },
         { label: "Super into it this week. Next week? Who knows.", type: "The Hobby Hopper" }
       ]
@@ -56,7 +56,7 @@ export const questions = [
     {
       text: "How do you usually feel after a practice session?",
       options: [
-        { label: "Energized — I just unlocked another achievement!", type: "The Teacher’s Pet" },
+        { label: "Energized — I just unlocked another achievement!", type: "The Practice Machine" },
         { label: "Satisfied. My downstrokes were 4 BPM tighter than yesterday.", type: "The Nerd" },
         { label: "‘That was fun… maybe I’ll stick with it this time.’", type: "The Eternal Restarter" },
         { label: "‘Huh. Well, that was a cool little detour from life.’", type: "The Hobby Hopper" }
@@ -68,7 +68,7 @@ export const questions = [
         { label: "Getting tight enough to jam with friends at a party.", type: "The Poser" },
         { label: "Playing without muttering ‘I used to be better at this.’", type: "The I-Used-to-Play" },
         { label: "Actually remembering to practice twice in one week.", type: "The Someday Player" },
-        { label: "Achieving a 30-day streak and framing the certificate.", type: "The Teacher’s Pet" }
+        { label: "Achieving a 30-day streak and framing the certificate.", type: "The Practice Machine" }
       ]
     },
     {
@@ -94,7 +94,7 @@ export const questions = [
       options: [
         { label: "I consult with my muse over breakfast coffee.", type: "The Artist" },
         { label: "Based on whatever the people in the room like.", type: "The Poser" },
-        { label: "Based on where I left off in my perfectly optimized path.", type: "The Teacher’s Pet" },
+        { label: "Based on where I left off in my perfectly optimized path.", type: "The Practice Machine" },
         { label: "Based on what I half-remember from a years ago.", type: "The I-Used-to-Play" }
       ]
     },
@@ -119,7 +119,7 @@ export const questions = [
     {
       text: "You are learning with an app. You get a notification that there is a new song to try. What do you do?",
       options: [
-        { label: "Play obsessively until I have it down perfectly.", type: "The Teacher’s Pet" },
+        { label: "Play obsessively until I have it down perfectly.", type: "The Practice Machine" },
         { label: "Cool story but I have to make my kids dinner.", type: "The Someday Player" },
         { label: "Click it, get overwhelmed, disappear for a month.", type: "The Eternal Restarter" },
         { label: "Song? Nah, it’s yoga time.", type: "The Hobby Hopper" }

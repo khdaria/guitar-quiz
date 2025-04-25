@@ -8,7 +8,7 @@ const typeImages = {
   "The Nerd": "/img/nerd.png",
   "The I-Used-to-Play": "/img/usedtoplay.png",
   "The Someday Player": "/img/someday.png",
-  "The Teacher’s Pet": "/img/teacher.png",
+  "The Practice Machine": "/img/teacher.png",
   "The Hobby Hopper": "/img/hopper.png"
 };
 
@@ -49,9 +49,9 @@ const typeDescriptions = {
     description1: "You want to play — you really do. But between work, errands, and everything else, guitar ends up last on the list.",
     description2: "Stick to 5–10 minute sessions. Try “riff of the day” or short, rewarding exercises that don’t need warm-up."
   },
-  "The Teacher’s Pet": {
+  "The Practice Machine": {
     short: "Badge-seeking overachiever",
-    title: "The Teacher’s Pet",
+    title: "The Practice Machine",
     description1: "You love ticking boxes, smashing goals, and watching your progress add up. You want a clear path and feedback.",
     description2: "Focus on lesson paths, streak challenges, and skill-tracking tools. Bonus if there’s a badge at the end."
   },
